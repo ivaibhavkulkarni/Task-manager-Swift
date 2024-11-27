@@ -19,6 +19,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="baH-in-jMg">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="PlS-lw-x3Z">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PlS-lw-x3Z" id="4DA-fa-6hq">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -30,16 +40,25 @@
                             <constraint firstItem="baH-in-jMg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o7E-HT-mMS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oMb-BV-JAn"/>
+                    <navigationItem key="navigationItem" id="oMb-BV-JAn">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="JAA-Gf-vk1">
+                            <connections>
+                                <action selector="didTapAdd" destination="BYZ-38-t0r" id="eE5-En-rrP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableview" destination="baH-in-jMg" id="4Jz-ng-LdI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="382.44274809160305" y="-1.4084507042253522"/>
+            <point key="canvasLocation" x="230" y="-1"/>
         </scene>
-        <!--View Controller-->
+        <!--Task View Controller-->
         <scene sceneID="PMu-SW-rx5">
             <objects>
-                <viewController id="U8f-k3-NAb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="task" id="U8f-k3-NAb" customClass="TaskViewController" customModule="Task_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yN1-zC-FDo">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +68,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WQd-3Q-26e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162.5954198473282" y="-1.4084507042253522"/>
+            <point key="canvasLocation" x="976" y="-1"/>
+        </scene>
+        <!--Entry View Controller-->
+        <scene sceneID="BH7-Pa-7K6">
+            <objects>
+                <viewController id="yfP-bd-Rlg" customClass="EntryViewController" customModule="Task_manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YyC-eo-A5D">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="LgX-2d-KyR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qnU-HJ-GIQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="230" y="740"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BnS-wR-MUw">
@@ -61,6 +95,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w3P-Vu-8ub">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="k4L-0L-ZNm"/>
                     </connections>
